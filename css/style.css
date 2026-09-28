@@ -1,0 +1,90 @@
+/* Zen — jungla rosa: flamenco, verde jungla y cobre */
+:root{
+  --cream:#fff5f4;
+  --pink:#f4a6c0;
+  --hot:#e0527f;
+  --jungle:#1f5b3f;
+  --leaf:#7fb99a;
+  --copper:#c56a3a;
+  --ink:#2a1f24;
+  --mute:#7d6570;
+  --f-sans:'Zen Maru Gothic',system-ui,sans-serif;
+  --f-fat:'Shrikhand',cursive;
+  --pad:clamp(18px,4vw,64px);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-sans);font-size:clamp(16px,1.05vw,18px);line-height:1.65;overflow-x:hidden}
+main{overflow-x:clip}
+a{color:inherit}
+img{display:block;max-width:100%}
+em{font-family:var(--f-fat);font-style:normal;color:var(--hot);font-weight:400}
+.kicker{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--jungle)}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:1em 1.7em;border-radius:100px;background:var(--hot);color:#fff;text-decoration:none;font-weight:700;transition:transform .5s var(--ease),background .4s;box-shadow:0 12px 26px -12px rgba(224,82,127,.7)}
+.btn:hover{transform:translateY(-3px) rotate(-2deg);background:var(--jungle)}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn--ghost:hover{color:#fff}
+
+.nav{position:fixed;inset:0 0 auto;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:1rem var(--pad)}
+.nav__logo{font-family:var(--f-fat);font-size:2rem;line-height:1;color:var(--hot);text-decoration:none}
+.nav__cta{padding:.55em 1.2em;border-radius:100px;background:#fff;text-decoration:none;font-weight:700;box-shadow:0 6px 20px -8px rgba(42,31,36,.3)}
+
+/* ---------- jungla ---------- */
+.jungle{height:230vh;position:relative}
+.jungle__sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#ffe3ea,#fbd0dc 45%,#f4a6c0 100%)}
+.jungle__center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 var(--pad);z-index:1}
+.jungle h1{font-family:var(--f-fat);font-weight:400;font-size:clamp(7rem,28vw,24rem);line-height:.8;color:var(--hot);text-shadow:0 10px 0 rgba(42,31,36,.08)}
+.jungle__lead{max-width:30rem;margin:1rem 0 1.8rem;font-weight:500}
+.leaves{position:absolute;inset:0;z-index:2;pointer-events:none}
+.leaf{position:absolute;will-change:transform;filter:drop-shadow(0 20px 30px rgba(31,91,63,.25))}
+
+/* ---------- mechas ---------- */
+.sun{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(80px,12vw,150px) var(--pad)}
+.sun h2,.palette h2,.cuts h2,.team h2,.visit h2{font-weight:900;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.02;margin:.6rem 0 1.2rem}
+.sun h2 em{font-size:1.05em}
+.sun__txt p:last-child{color:var(--mute)}
+.sun__grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sun__grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:28px}
+.sun__grid img:nth-child(2){margin-top:3rem}
+.sun__grid img:nth-child(3){margin-top:-3rem}
+
+/* ---------- paleta ---------- */
+.palette{padding:clamp(70px,10vw,130px) var(--pad);background:var(--jungle);color:var(--cream);text-align:center}
+.palette .kicker{color:var(--pink)}
+.swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.swatches figure{border-radius:200px 200px 24px 24px;overflow:hidden;background:#fff;color:var(--ink);transition:transform .5s var(--ease)}
+.swatches figure:hover{transform:translateY(-10px) rotate(-2deg)}
+.swatches img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.swatches figcaption{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem;font-weight:700}
+.swatches i{width:18px;height:18px;border-radius:50%}
+
+/* ---------- cortes ---------- */
+.cuts{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(80px,12vw,150px) var(--pad)}
+.cuts__txt p:last-child{color:var(--mute)}
+.cuts__imgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cuts__imgs img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:24px}
+.cuts__imgs img:nth-child(2){transform:translateY(2rem)}
+
+/* ---------- equipo ---------- */
+.team{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center;padding:0 var(--pad) clamp(80px,12vw,150px)}
+.team__img{border-radius:36px;overflow:hidden;transform:rotate(-2deg);box-shadow:0 30px 60px -30px rgba(42,31,36,.5)}
+.team__img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.team blockquote{margin-top:1.2rem;padding:1.2rem 1.4rem;border-radius:22px;background:#fff;font-size:1.05rem}
+cite{display:block;margin-top:.5rem;font-style:normal;font-weight:700;font-size:.85rem;color:var(--hot)}
+
+.rate{padding:clamp(60px,8vw,110px) var(--pad);text-align:center;background:var(--pink)}
+.rate__big{font-family:var(--f-fat);font-size:clamp(6rem,18vw,13rem);line-height:.9;color:var(--jungle)}
+.rate__q{max-width:40rem;margin:1rem auto 0;font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:700}
+
+.visit{padding:clamp(70px,10vw,130px) var(--pad)}
+.visit__card{max-width:860px;margin:0 auto;text-align:center;padding:clamp(28px,5vw,60px);border-radius:40px;background:#fff;box-shadow:0 30px 70px -40px rgba(42,31,36,.4)}
+.visit__card>p:not(.kicker){color:var(--mute);margin-bottom:1.8rem}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.foot{padding:1.6rem;text-align:center;color:var(--mute)}
+.foot span{font-family:var(--f-fat);color:var(--hot);font-size:1.3rem}
+
+@media (max-width:860px){
+  .sun,.cuts,.team{grid-template-columns:minmax(0,1fr)}
+  .swatches{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
